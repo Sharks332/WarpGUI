@@ -1,0 +1,31 @@
+/cmd add warpgui let %form%[“type”] = “form”
+/cmd add warpgui let %form%[“title”] = “Warp GUI”
+/cmd add warpgui let %form%[“content”] = “Click a button to warp there!”
+/cmd add warpgui let %button0%[“text”] = “Creative”
+/cmd add warpgui let %button1%[“text”] = “Games”
+/cmd add warpgui let %button2%[“text”] = “Plots”
+/cmd add warpgui let %button3%[“text”] = “FAQ”
+/cmd add warpgui let %button4%[“text”] = “City”
+/cmd add warpgui let %buttons%[] = %button0%
+/cmd add warpgui let %buttons%[] = %button1%
+/cmd add warpgui let %buttons%[] = %button2%
+/cmd add warpgui let %buttons%[] = %button3%
+/cmd add warpgui let %buttons%[] = %button4%
+/cmd add warpgui let %form%[“buttons”] = %buttons%
+/cmd add warpgui let %res% = dialog(%p%, %form%)
+/cmd add warpgui if %res% = “0” then goto 50
+/cmd add warpgui if %res% = “1” then goto 60
+/cmd add warpgui if %res% = “2” then goto 70
+/cmd add warpgui if %res% = “3” then goto 80
+/cmd add warpgui if %res% = “4” then goto 90
+/cmd add warpgui exit
+/cmd edit warpgui 50 /creative
+/cmd add warpgui exit
+/cmd edit warpgui 60 /games
+/cmd add warpgui exit
+/cmd edit warpgui 70 /plots
+/cmd add warpgui exit
+/cmd edit warpgui 80 /faq
+/cmd add warpgui exit
+/cmd edit warpgui 90 /city
+/cmd add warpgui exit
